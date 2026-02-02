@@ -164,7 +164,9 @@ function taskRow(obj) {
 }
 
 function deleteTask(e) {
-  let ind = arr.findIndex((obj) => obj.id === Number(e.target.parentElement.parentElement.dataset.id));
+  let ind = arr.findIndex(
+    (obj) => obj.id === Number(e.target.parentElement.parentElement.dataset.id),
+  );
   // Check the task is completed or not
   if (arr[ind].status !== true) {
     let conf = window.confirm("You want to delete the task ?");
