@@ -133,9 +133,8 @@ function taskRow(obj) {
   // Create a delete button for delete task
   const delBtn = document.createElement("button");
   delBtn.className =
-    "px-3 py-2 md:px-4 md:py-3 text-[12px] md:text-[20px] border-2 bg-red-100 rounded text-red-500 font-bold transition-all cursor-pointer hover:bg-red-500 hover:text-white";
+    "delete-btn px-3 py-2 md:px-4 md:py-3 text-[12px] md:text-[20px] border-2 bg-red-100 rounded text-red-500 font-bold transition-all cursor-pointer hover:bg-red-500 hover:text-white";
   delBtn.innerHTML = "Delete";
-  delBtn.value = obj.id;
   delBtn.addEventListener("click", deleteTask);
   td3.appendChild(delBtn);
 
@@ -181,7 +180,7 @@ function editTask(e) {
   const taskElement = e.currentTarget;
   const oldTask = taskElement.innerText;
   const row = taskElement.closest("tr");
-  const deleteBtn = row.querySelector("button");
+  const deleteBtn = row.querySelector(".delete-btn");
   const taskId = Number(row.dataset.id);
   const index = arr.findIndex((obj) => obj.id === taskId);
 
